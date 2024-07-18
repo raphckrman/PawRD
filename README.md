@@ -1,6 +1,6 @@
 <p align="center">
   <picture>
-    <img alt="PawRD Banner" src="">
+    <img alt="PawRD Banner" src="https://github.com/LiterateInk/PawRD/blob/db01f4e462f8604c9eb75014fb0e072d7ade278d/.github/assets/readme.svg">
   </picture>
 </p>
 
