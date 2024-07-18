@@ -1,4 +1,8 @@
-# PawRD
+<p align="center">
+  <picture>
+    <img alt="PawRD Banner" src="">
+  </picture>
+</p>
 
 PawRD is a simple wrapper around [ARD GEC](https://www.ard.fr/produits-services/gamme-gec/) internal API.
 
