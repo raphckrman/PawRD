@@ -1,8 +1,4 @@
-<p align="center">
-  <picture>
-    <img alt="PawRD Banner" src="https://github.com/LiterateInk/PawRD/blob/db01f4e462f8604c9eb75014fb0e072d7ade278d/.github/assets/readme.svg">
-  </picture>
-</p>
+![PawRD Banner](.github/assets/banner.svg)
 
 PawRD is a simple wrapper around [ARD GEC](https://www.ard.fr/produits-services/gamme-gec/) internal API.
 
