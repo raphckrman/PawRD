@@ -4,7 +4,8 @@
 
 ## What is "ARD GEC" ?
 
-[ARD GEC](https://www.ard.fr/produits-services/gamme-gec/) is a... *(a section about this service would be lovely, will stay empty for now)*.
+[ARD](https://www.ard.fr/) is a manufacturer of security and electronic payment solutions. [ARD GEC](https://www.ard.fr/produits-services/gamme-gec/) is the catering arm of all ARD services.
+It enables students and parents to reserve and pay for meals, consult menus and track consumption. ARD GEC facilitates canteen organization and ensures efficient management of school meals.
 
 ## Implementations
 
