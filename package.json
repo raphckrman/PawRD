@@ -1,40 +1,42 @@
 {
   "name": "pawrd",
   "version": "0.0.0",
-  "description": "A simple wrapper around ARD internal API.",
-  "repository": "github:LiterateInk/PawRD",
+  "description": "An awmazing API wrapper for ARD GEC.",
+  "repository": "https://github.com/LiterateInk/PawRD",
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
+    "import": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "require": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs"
+      "default": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --dts --minify terser --clean --format cjs,esm --sourcemap",
+    "build": "tsup",
     "release": "release-it",
-    "lint": "tsc && eslint .",
-    "tsx": "tsx"
+    "lint": "tsc && eslint ."
   },
   "files": [
     "dist"
   ],
   "keywords": [
     "ARD",
-    "api",
+    "GEC",
     "wrapper",
-    "student",
-    "France"
+    "api"
   ],
-  "author": "Mikkel RINGAUD <mikkel@milescode.dev> (https://github.com/Vexcited)",
-  "homepage": "https://literate.ink/pawrd",
+  "author": "LiterateInk <contact@literate.ink> (https://literate.ink)",
+  "homepage": "https://docs.literate.ink/pawrd",
   "bugs": {
     "url": "https://github.com/LiterateInk/PawRD/issues"
   },
-  "license": "GPL-3.0",
+  "license": "GPL-3.0-or-later",
   "engines": {
     "node": ">=18"
   },
@@ -45,16 +47,15 @@
       "tagName": "js-v${version}"
     },
     "github": {
-      "release": true,
       "draft": false,
+      "release": true,
       "releaseName": "js v${version}"
     },
     "npm": {
-      "publish": true
+      "publish": false
     },
     "hooks": {
-      "before:init": "pnpm lint",
-      "after:bump": "pnpm build"
+      "before:init": "pnpm lint"
     }
   },
   "devDependencies": {
@@ -67,7 +68,9 @@
     "release-it": "^17.0.3",
     "terser": "^5.27.0",
     "tsup": "^8.0.2",
-    "tsx": "^4.7.1",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@literate.ink/utilities": "1.0.0-10430491290.1"
   }
 }

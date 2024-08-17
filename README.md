@@ -1,12 +1,10 @@
-# PawRD - An awmazing API wrapper for ARD GEC
+<img alt="PawRD: An awmazing API wrapper for ARD GEC" src="https://raw.githubusercontent.com/LiterateInk/PawRD/index/.github/assets/banner.svg" width="100%" />
 
-A simple wrapper around [ARD GEC](https://www.ard.fr/produits-services/gamme-gec/) internal API.
-
-> This project is not affiliated with [ARD](https://www.ard.fr) in any way.
+*This library **is not** affiliated with [ARD](https://www.ard.fr/) in any way.*
 
 ## Installation
 
-Use your favorite package manager to install [PawRD from NPM](https://www.npmjs.com/package/pawrd).
+Use your favorite package manager to install this library from NPM.
 
 ```bash
 # pnpm
@@ -16,15 +14,16 @@ pnpm add pawrd
 yarn add pawrd
 
 # npm
-npm install pawrd
+npm add pawrd
+
+# Bun
+bun add pawrd
 ```
 
-## Documentation & Guides
+## Documentation
 
-You can find the documentation, some guides and small examples at [literate.ink/pawrd](https://literate.ink/pawrd) for more information about the API and how to use it.
+You can find documentation with guides at [docs.literate.ink/pawrd](https://docs.literate.ink/pawrd).
 
-If you need complete examples, then we got **a lot** of those in the [`examples`](https://github.com/LiterateInk/PawRD/tree/js/examples) folder, hoping you can find your joy in there.
+If it's not enough you can also take a look at the [`examples`](https://github.com/LiterateInk/PawRD/tree/js/examples) folder in the GitHub repository for inspiration.
 
-If none of those are helpful, you can always [open an issue](https://github.com/LiterateInk/PawRD/issues) to ask for help.
-
-You can also join [LiterateInk's Discord server](https://literate.ink/discord) to talk about PawRD, get help and be notified about the latest updates !
+If none of those are helpful, you can always [open an issue](https://github.com/LiterateInk/PawRD/issues) to ask for help or join the [LiterateInk Discord server](https://literate.ink/discord).
