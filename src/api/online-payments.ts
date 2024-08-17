@@ -1,4 +1,3 @@
-import { cookiesObjectToString } from "~/utils/cookies";
 import { createEndpointURL } from "~/utils/endpoints";
 import { findAndReadGecData } from "~/utils/finders";
 
@@ -82,9 +81,9 @@ export type WalletData = {
   | { walletName: "RESTAURATION", walletOrid: 2 }
 );
 
-export const getOnlinePayments = async (schoolID: string, cookies: Record<string, string>): Promise<OnlinePayments> => {
+export const getOnlinePayments = async (schoolID: string, cookies: string[]): Promise<OnlinePayments> => {
   const response = await fetch(createEndpointURL(schoolID, "menu-utilisateur/paiement-en-ligne.html"), {
-    headers: { "Cookie": cookiesObjectToString(cookies) }
+    headers: { "Cookie": cookies.join("; ") }
   });
 
   const html = await response.text();
