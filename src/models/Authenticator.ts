@@ -33,7 +33,7 @@ export class Authenticator {
     params.set("pass", hashed_password);
 
     params.set("submit", "VALIDER");
-    params.set("logintype", read("logintype"));
+    params.set("logintype", "login");
     params.set("pid", read("pid"));
     params.set("redirect_url", "");
     params.set("challenge", challenge);
