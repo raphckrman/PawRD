@@ -35,7 +35,7 @@ export class Authenticator {
     params.set("submit", "VALIDER");
     params.set("logintype", read("logintype"));
     params.set("pid", read("pid"));
-    params.set("redirect_url", read("redirect_url"));
+    params.set("redirect_url", "");
     params.set("challenge", challenge);
 
     const request: Request = {
