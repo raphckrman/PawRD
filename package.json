@@ -1,6 +1,6 @@
 {
   "name": "pawrd",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An awmazing API wrapper for ARD GEC.",
   "repository": "https://github.com/LiterateInk/PawRD",
   "sideEffects": false,
