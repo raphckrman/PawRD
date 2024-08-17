@@ -1,28 +1,21 @@
-![PawRD Banner](.github/assets/banner.svg)
+<img alt="PawRD: An awmazing API wrapper for ARD GEC" src=".github/assets/banner.svg" width="100%" />
 
-PawRD is a simple wrapper around [ARD GEC](https://www.ard.fr/produits-services/gamme-gec/) internal API.
+*This library **is not** affiliated with [ARD](https://www.ard.fr/) in any way.*
 
-> [!NOTE]
-> This project is not affiliated with [ARD](https://www.ard.fr) in any way.
+## What is "ARD GEC" ?
 
-## Supported languages
+[ARD GEC](https://www.ard.fr/produits-services/gamme-gec/) is a... *(a section about this service would be lovely, will stay empty for now)*.
+
+## Implementations
 
 You're currently on the `index` branch.
-Since we're implementing PawRD in different languages, we have a branch for each language.
 
-- [JavaScript / TypeScript](https://github.com/LiterateInk/PawRD/tree/js) (base implementation)
-- [Dart](https://github.com/LiterateInk/PawRD/tree/dart) (not started)
+Since we're implementing this library in different programming languages, we have a branch for each of them.
 
-## Documentation
-
-For now, since we're still in the early stages of development, the documentation is not available yet.
-
-You might go look at the examples for the language you want to use for now.
-
-## Get help
-
-Join [LiterateInk's Discord server](https://literate.ink/discord) to talk about PawRD, get help and be notified about the latest updates !
+| [JS/TS](https://github.com/LiterateInk/PawRD/tree/js) | Rust | Python | Swift |
+| :---:  | :---: | :---: | :---: |
+| Kotlin | C#    |       |       |
 
 ## License
 
-This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GPL-3.0 License - see the [LICENSE.md](LICENSE.md) file for details.

@@ -5,15 +5,16 @@ message: >-
   metadata from this file.
 type: software
 authors:
-  - given-names: Mikkel
-    family-names: RINGAUD
-    email: mikkel@milescode.dev
+  - name: LiterateInk
+    website: "https://literate.ink"
+    email: contact@literate.ink
 repository-code: 'https://github.com/LiterateInk/PawRD'
-url: 'https://literate.ink/pawrd'
+url: 'https://docs.literate.ink/pawrd'
 abstract: >-
-  A simple wrapper around ARD GEC internal API.
+  An awmazing API wrapper for ARD GEC.
 keywords:
   - ARD
+  - GEC
   - wrapper
-  - api
-license: GPL-3.0
+  - api 
+license: GPL-3.0-or-later
