@@ -1,5 +1,5 @@
 import { findValueBetween, defaultFetcher, Response, Request, setHeaderToRequest, getHeaderFromResponse, getCookiesFromResponse } from "@literate.ink/utilities";
-import { ARD_HOST } from "~/utils/constants";
+import { ARD_HOST, USER_AGENT } from "~/utils/constants";
 import { Client } from "~/models/Client";
 import forge from "node-forge";
 import { createEndpointURL } from "~/utils/endpoints";
@@ -10,9 +10,13 @@ export class Authenticator {
   public async fromCredentials (establishmentID: string, username: string, password: string) {
     const url = createEndpointURL(establishmentID, "accueil.html");
     let response: Response;
+    let request: Request;
     let html: string;
 
-    response = await defaultFetcher({ url: new URL(url) });
+    request = { url: new URL(url) };
+    setHeaderToRequest(request, "User-Agent", USER_AGENT);
+
+    response = await defaultFetcher(request);
     html = response.content;
 
     const params = new URLSearchParams();
@@ -38,12 +42,13 @@ export class Authenticator {
     params.set("redirect_url", "");
     params.set("challenge", challenge);
 
-    const request: Request = {
+    request = {
       url: new URL(url + "?no_cache=1"),
       method: "POST",
       content: params.toString()
     };
 
+    setHeaderToRequest(request, "User-Agent", USER_AGENT);
     setHeaderToRequest(request, "Content-Type", "application/x-www-form-urlencoded");
     response = await defaultFetcher(request);
 
@@ -71,7 +76,10 @@ export class Authenticator {
 
     response = await defaultFetcher({
       url: new URL(pronoteTicketURL),
-      redirect: "manual"
+      redirect: "manual",
+      headers: {
+        "User-Agent": USER_AGENT
+      }
     });
 
     redirectedURL = getHeaderFromResponse(response, "location")!;
@@ -80,7 +88,8 @@ export class Authenticator {
     response = await defaultFetcher({
       url: new URL(redirectedURL),
       headers: {
-        "Cookie": cookies.join("; ")
+        "Cookie": cookies.join("; "),
+        "User-Agent": USER_AGENT
       },
       redirect: "manual"
     });
@@ -92,7 +101,8 @@ export class Authenticator {
     response = await defaultFetcher({
       url: new URL(redirectedURL),
       headers: {
-        "Cookie": cookies.join("; ")
+        "Cookie": cookies.join("; "),
+        "User-Agent": USER_AGENT
       },
       redirect: "manual"
     });

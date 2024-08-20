@@ -1,3 +1,4 @@
+import { USER_AGENT } from "~/utils/constants";
 import { createEndpointURL } from "~/utils/endpoints";
 import { findAndReadGecData } from "~/utils/finders";
 
@@ -83,7 +84,7 @@ export type WalletData = {
 
 export const getOnlinePayments = async (schoolID: string, cookies: string[]): Promise<OnlinePayments> => {
   const response = await fetch(createEndpointURL(schoolID, "menu-utilisateur/paiement-en-ligne.html"), {
-    headers: { "Cookie": cookies.join("; ") }
+    headers: { "Cookie": cookies.join("; "), "User-Agent": USER_AGENT }
   });
 
   const html = await response.text();
