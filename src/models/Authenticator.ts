@@ -22,14 +22,8 @@ export class Authenticator {
     const params = new URLSearchParams();
     params.set("user", username);
 
-    const START = "<input type=\"hidden\" name=\"";
-    const START_BETWEEN = "\" value=\"";
-    const END = "\" />";
-    const read = (name: string) => {
-      return findValueBetween(html, START + name + START_BETWEEN, END);
-    };
-
-    const challenge = read("challenge");
+    const pid = findValueBetween(html, "<input type=\"hidden\" name=\"pid\" value=\"", "\" />");
+    const challenge = "69".repeat(16);
 
     let hashed_password = md5(password);
     hashed_password = md5(username + ":" + hashed_password + ":" + challenge);
@@ -38,7 +32,7 @@ export class Authenticator {
 
     params.set("submit", "VALIDER");
     params.set("logintype", "login");
-    params.set("pid", read("pid"));
+    params.set("pid", pid);
     params.set("redirect_url", "");
     params.set("challenge", challenge);
 
@@ -55,7 +49,7 @@ export class Authenticator {
     const cookies = getCookiesFromResponse(response);
     this.check(cookies);
 
-    return Client.fromAPI(response.content, cookies);
+    return Client.fromAPI(response.content, cookies, pid);
   }
 
   /**

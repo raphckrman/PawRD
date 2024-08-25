@@ -5,6 +5,7 @@ import { findValueBetween } from "@literate.ink/utilities";
 
 export class Client {
   public constructor (
+    public pid: string,
     public schoolID: string,
     public schoolName: string,
     public schoolImageURL: string,
@@ -15,11 +16,11 @@ export class Client {
     return getOnlinePayments(this.schoolID, this.cookies);
   }
 
-  public static fromAPI (html: string, cookies: string[]) {
+  public static fromAPI (html: string, cookies: string[] = [], pid = "") {
     const schoolID = findValueBetween(html, ARD_BASE_ENDPOINT.slice(1) + "/", "/accueil.html");
     const [schoolImagePath, , schoolName] = findValueBetween(html, "<img src=\"", "\" />").split("\"");
     const schoolImageURL = ARD_HOST + "/" + schoolImagePath;
 
-    return new Client(schoolID, schoolName, schoolImageURL, cookies);
+    return new Client(pid, schoolID, schoolName, schoolImageURL, cookies);
   }
 }
