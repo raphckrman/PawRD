@@ -23,7 +23,7 @@ export class Authenticator {
     params.set("user", username);
 
     const pid = findValueBetween(html, "<input type=\"hidden\" name=\"pid\" value=\"", "\" />");
-    const challenge = "69".repeat(16);
+    const challenge = findValueBetween(html, "<input type=\"hidden\" name=\"challenge\" value=\"", "\" />");
 
     let hashed_password = md5(password);
     hashed_password = md5(username + ":" + hashed_password + ":" + challenge);
