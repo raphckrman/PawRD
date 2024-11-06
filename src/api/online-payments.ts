@@ -83,8 +83,9 @@ export type WalletData = {
 );
 
 export const getOnlinePayments = async (schoolID: string, cookies: string[]): Promise<OnlinePayments> => {
-  const response = await fetch(createEndpointURL(schoolID, "menu-utilisateur/paiement-en-ligne.html"), {
-    headers: { "Cookie": cookies.join("; "), "User-Agent": USER_AGENT }
+  const response = await fetch(createEndpointURL(schoolID, "menu-utilisateur/paiement-en-ligne.html") + "?no_cache=1", {
+    headers: { "Cookie": cookies.join("; "), "User-Agent": USER_AGENT },
+    credentials: "omit"
   });
 
   const html = await response.text();
